@@ -1,3 +1,4 @@
+-- changeset koryakin: 1
 create table if not exists netology.CUSTOMERS(
     id SERIAL primary key,
     name varchar (255) not null,
@@ -6,6 +7,9 @@ create table if not exists netology.CUSTOMERS(
     phone_number varchar (255)
 );
 
+-- rollback drop table netology.customers;
+
+-- changeset koryakin: 2
 create table if not exists netology.ORDERS(
     id SERIAL primary key,
     date varchar (255) not null,
@@ -16,4 +20,6 @@ create table if not exists netology.ORDERS(
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
+
+-- rollback drop table netology.orders;
 

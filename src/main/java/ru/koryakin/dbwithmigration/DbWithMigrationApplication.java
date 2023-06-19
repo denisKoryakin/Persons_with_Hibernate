@@ -1,4 +1,4 @@
-package ru.koryakin.dbwithoutmigration;
+package ru.koryakin.dbwithmigration;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

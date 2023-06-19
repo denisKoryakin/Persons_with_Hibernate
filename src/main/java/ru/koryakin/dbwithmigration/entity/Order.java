@@ -1,4 +1,4 @@
-package ru.koryakin.dbwithoutmigration.entity;
+package ru.koryakin.dbwithmigration.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

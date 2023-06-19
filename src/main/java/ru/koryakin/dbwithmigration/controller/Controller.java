@@ -1,10 +1,10 @@
-package ru.koryakin.dbwithoutmigration.controller;
+package ru.koryakin.dbwithmigration.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import ru.koryakin.dbwithoutmigration.repository.OrderDao;
+import ru.koryakin.dbwithmigration.repository.OrderDao;
 
 import java.util.List;
 
