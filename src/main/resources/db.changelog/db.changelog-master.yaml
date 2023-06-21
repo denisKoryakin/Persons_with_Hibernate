@@ -8,3 +8,9 @@ databaseChangeLog:
   - include:
       file: migrations/persons_v3.sql
       relativeToChangeLogFile: true
+  - include:
+      file: migrations/persons_v4.sql
+      relativeToChangeLogFile: true
+  - include:
+      file: migrations/persons_v5.sql
+      relativeToChangeLogFile: true
