@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: migrations/persons_v1.sql
+      relativeToChangeLogFile: true
+  - include:
+      file: migrations/persons_v2.sql
+      relativeToChangeLogFile: true
+  - include:
+      file: migrations/persons_v3.sql
+      relativeToChangeLogFile: true
