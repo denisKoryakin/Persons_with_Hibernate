@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.koryakin.dbwithmigration.repository.OrderDao;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class Controller {
@@ -15,7 +16,7 @@ public class Controller {
     OrderDao orderDao;
 
     @GetMapping("/products/fetch-product")
-    public List<String> getProducts(@RequestParam("name") String name) {
+    public Map<String, List<String>> getProducts(@RequestParam("name") String name) {
         return orderDao.getProductName(name);
     }
 }

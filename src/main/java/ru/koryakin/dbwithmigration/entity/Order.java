@@ -1,19 +1,28 @@
 package ru.koryakin.dbwithmigration.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Entity
+@Data
+@NoArgsConstructor
 @AllArgsConstructor
-@Getter
+@Table(name = "orders")
 public class Order {
 
-    public int id;
+    @Id
+    @GeneratedValue
+    int id;
 
-    public String date;
+    String date;
 
-    public int customerId;
+    @Column(name = "customer_id")
+    int customerId;
 
-    public String productName;
+    @Column(name = "product_name")
+    String productName;
 
-    public int amount;
+    int amount;
 }
