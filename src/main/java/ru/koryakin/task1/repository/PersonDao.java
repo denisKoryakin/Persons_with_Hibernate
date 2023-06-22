@@ -18,7 +18,7 @@ public class PersonDao {
 
     @Transactional
     public List<?> getPersonsByCity(String city) {
-        return manager.createQuery("SELECT p from Person p where p.cityOfLiving = ?1")
+        return manager.createQuery("SELECT p from Person p where lower(p.cityOfLiving) like lower(?1)")
                 .setParameter(1, city)
                 .getResultList();
     }
