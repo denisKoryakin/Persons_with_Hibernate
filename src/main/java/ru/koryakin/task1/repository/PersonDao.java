@@ -1,22 +1,20 @@
 package ru.koryakin.task1.repository;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import jakarta.transaction.Transactional;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import ru.koryakin.task1.entity.Person;
+import ru.koryakin.task1.entity.PersonId;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
-public class PersonDao {
+public interface PersonDao extends JpaRepository<Person, PersonId> {
 
-    @PersistenceContext
-    EntityManager manager;
+    List<Person> findPersonByCityOfLivingIgnoreCase(String city);
 
-    @Transactional
-    public List<?> getPersonsByCity(String city) {
-        return manager.createQuery("SELECT p from Person p where lower(p.cityOfLiving) like lower(?1)")
-                .setParameter(1, city)
-                .getResultList();
-    }
+    List<Person> findPersonByPersonIdAgeBeforeOrderByPersonIdAgeAsc(int age);
+
+    Optional<Person> findPersonByPersonIdNameIgnoreCaseAndPersonIdSurnameIgnoreCase(String name, String surname);
 }
+
