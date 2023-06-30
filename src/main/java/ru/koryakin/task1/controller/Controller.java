@@ -16,6 +16,11 @@ public class Controller {
     @Autowired
     PersonDao personDao;
 
+    @GetMapping("/")
+    public String hello() {
+        return "Hello!";
+    }
+
     @GetMapping("/persons/byCity-{city}")
     public List<Person> personsToReturnByCity(@PathVariable String city) {
         return personDao.findPersonByCityOfLivingIgnoreCase(city);
